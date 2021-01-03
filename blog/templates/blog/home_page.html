@@ -1,6 +1,14 @@
-<html>
-<body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</body>
-</html>
+<div>
+    <h1><a href="/">Roger's Store</a></h1>
+</div>
+
+{% for item in items %}
+    <div>
+        <h1>{{ item.name }}</h1>
+        <h2>{{ item.cost }} </h2>
+        <h2>{{ item.description }}</h2>
+        <h3>{{ item.seller }}</h3>
+        <h3>{{ item.created_date }}</h3>
+        <p>IMAGE - <img src="{{ item.images.url }}" ></p>
+    </div>
+{% endfor %}
