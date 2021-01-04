@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from django_resized import ResizedImageField
 from django.dispatch import receiver
 from django.contrib.auth.models import User
 

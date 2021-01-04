@@ -1,13 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-{% for item in items %}
-    <hr style="height:2px;border:none;color:#333;background-color:#333;" />
-    <div class="post">
+    <div class = "post">
         <h1><span class = "hed2">Name - </span><a href = "{% url 'item_detail' pk=item.pk %}">{{ item.name }}</a></h1>
         <h2><span class = "hed2">Cost - </span>{{ item.cost }} </h2>
         <h2><span class = "hed2">Posted On - </span>{{ item.created_date }}</h2>
+        <h2><span class = "hed2">Sold by - </span>{{ item.seller }}</h2>
+        <h3><span class = "hed1">About - </span>{{ item.description|linebreaksbr }}</h3>
         <p><img src="{{ item.images.url }}" ></p>
     </div>
-{% endfor %}
 {% endblock %}
